@@ -27,18 +27,66 @@ select{
 .face{
 	width: 100%;
 	height: 400px;
-	background-color: #333333;
+	position: relative;
 }
 
 .divImagen{
-	width: 35%;
+	width: 40%;
 	height: 100%;
 	background-color: yellow;
 	display: inline-block;
 }
+
+.divImagen img{
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+	display: inline-block;
+}
+
+
 .divAdivinar{
 	width: 55%;
 	height: 100%;
 	display: inline-block;
-	
+	background-color: #333333;
+	position: absolute;
+	top: 0;
+}
+
+.divAdivinar p{
+	color: white;
+	font-family: "Rokkitt", sans-serif;
+	position: absolute;
+	top: 20%;
+	left: 20%;
+}
+
+.divAdivinar input{
+	width: 60%;
+	padding: 5px;
+	font-family: "Rokkitt", sans-serif;
+	display: block;
+	position: absolute;
+	top: 30%;
+	left: 20%;
+}
+
+.divAdivinar button{
+	background-color: #F9A91A;
+	border-color: #F9A91A;
+	padding: 5px 8px;
+	color: white;
+	font-family: "Roboto", sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 40%;
+}
+.divAdivinar #mensaje{
+	color: white;
+	font-family: "Rokkitt", sans-serif;
+	font-size: 25px;
+	position: absolute;
+	top: 70%;
+	left: 40%;
 }
