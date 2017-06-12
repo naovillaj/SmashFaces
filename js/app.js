@@ -246,8 +246,6 @@ $( "#sede" ).change(function() {
     console.log("../img/peru/"+peru[randomPeru].image);
     $("#imagen").attr("src", "img/peru/"+ coderP.image);
     $("#comprobar").on("click",function(){
-      // click+=1;
-      console.log(click);
       if(coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) {
         $("#mensaje").text("Excelente, acertaste!");
         peru.splice(coderP, 1);
@@ -257,34 +255,23 @@ $( "#sede" ).change(function() {
         puntos+=5;
         $("#puntos").html(puntos);
       }else if(coderP.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) {
-        for(var i=0; i<5; i++){
-          click+=1;
+        click+=1;
+        console.log(click);
+        if(click<5){
           $("#mensaje").text("Sigue intentando");
           $("#nombreCoder").val("").focus();        
           $("#puntos").html(puntos);
-          if((click>=5) && (coderP.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
-            puntos-=1;
-            $("#nombreCoder").val("").focus();
-            $("#puntos").html(puntos);
-            $("#mensaje").text("Tu puntaje es: " + puntos);  
-            setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
-          }else if((click>5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
-            $("#mensaje").text("Tu puntaje es: " + puntos);  
-            setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
-          }
+        }else if((click>=5) && (coderP.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
+        puntos-=1;
+        $("#nombreCoder").val("").focus();
+        $("#puntos").html(puntos);
+        $("#mensaje").text("Tu puntaje es: " + puntos);  
+        setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
+        }else if((click>5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+          $("#mensaje").text("Tu puntaje es: " + puntos);  
+          setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
         }
-
       }
-      // else if((click>5) && (coderP.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
-      //   puntos-=1;
-      //   $("#nombreCoder").val("").focus();
-      //   $("#puntos").html(puntos);
-      //   $("#mensaje").text("Tu puntaje es: " + puntos);  
-      //   setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
-      // }else if((click>5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
-      //   $("#mensaje").text("Tu puntaje es: " + puntos);  
-      //   setTimeout(function(){randomPeru = Math.round(peruLength*Math.random())+1; coderP = peru[randomPeru]; $("#imagen").attr("src", "img/peru/"+ coderP.image); puntos=0; click=0; console.log("../img/peru/"+peru[randomPeru].image); }, 3000);        
-      // }
     })
   }
 
@@ -295,8 +282,6 @@ $( "#sede" ).change(function() {
     console.log("../img/mexico/"+mexico[randomMexico].image);
     $("#imagen").attr("src", "img/mexico/"+ coderM.image);
     $("#comprobar").on("click",function(){
-      click+=1;
-      console.log(click);
       if((click<=5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
         $("#mensaje").text("Excelente, acertaste!");
         mexico.splice(coderM, 1);
@@ -304,19 +289,23 @@ $( "#sede" ).change(function() {
         $("#nombreCoder").val("").focus();
         puntos+=5;
         $("#puntos").html(puntos);
-      }else if((click<=5) && (coderM.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
+      }else if(coderM.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) {
+        click+=1;
+        console.log(click);
+        if (click<5){
         $("#mensaje").text("Sigue intentando");
         $("#nombreCoder").val("").focus();        
         $("#puntos").html(puntos);
-      }else if((click>5) && (coderM.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
-        puntos-=1;
-        $("#nombreCoder").val("").focus();
-        $("#puntos").html(puntos);
-        $("#mensaje").text("Tu puntaje es: " + puntos);  
-        setTimeout(function(){randomMexico = Math.round(mexicoLength*Math.random())+1; coderM = mexico[randomMexico]; $("#imagen").attr("src", "img/mexico/"+ coderM.image); puntos=0; click=0;}, 3000);        
-      }else if((click>5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
-        $("#mensaje").text("Tu puntaje es: " + puntos);  
-        setTimeout(function(){randomMexico = Math.round(mexicoLength*Math.random())+1; coderM = mexico[randomMexico]; $("#imagen").attr("src", "img/mexico/"+ coderM.image); puntos=0; click=0; console.log("../img/mexico/"+mexico[randomMexico].image); }, 3000);        
+        } else if((click>=5) && (coderM.name.toLowerCase() != $("#nombreCoder").val().toLowerCase()) ){
+          puntos-=1;
+          $("#nombreCoder").val("").focus();
+          $("#puntos").html(puntos);
+          $("#mensaje").text("Tu puntaje es: " + puntos);  
+          setTimeout(function(){randomMexico = Math.round(mexicoLength*Math.random())+1; coderM = mexico[randomMexico]; $("#imagen").attr("src", "img/mexico/"+ coderM.image); puntos=0; click=0;}, 3000);        
+        }else if((click>5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+          $("#mensaje").text("Tu puntaje es: " + puntos);  
+          setTimeout(function(){randomMexico = Math.round(mexicoLength*Math.random())+1; coderM = mexico[randomMexico]; $("#imagen").attr("src", "img/mexico/"+ coderM.image); puntos=0; click=0; console.log("../img/mexico/"+mexico[randomMexico].image); }, 3000);        
+        }
       }
     })
   };
