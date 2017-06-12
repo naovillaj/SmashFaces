@@ -38,6 +38,16 @@ select{
 	position: relative;
 }
 
+.sede{
+	position: relative;
+}
+
+.sede .puntos{
+	position: absolute;
+	right: 10%;
+	bottom: 50%;
+}
+
 #puntos{
 	color: red;
 }
