@@ -233,52 +233,102 @@ var peru =  [{
 
 
 var peruLength = peru.length;
-var randomPeru = Math.round(peruLength*Math.random())+1;
 var puntos =0;
 var click =0;
-var coderP = peru[randomPeru];
+var sede = $("#sede").val();
 
 var mexicoLength = mexico.length;
-var randomMexico = Math.round(mexicoLength*Math.random())+1;
-var coderM = mexico[randomMexico];
-console.log("../img/peru/"+peru[randomPeru].image);
+
+
 
 $( "#sede" ).change(function() {
-  if ($("#sede").val("Perú")) {
-    $("#imagen").attr("src", "img/peru/"+ coderP.image);
-    $("#comprobar").on("click",function(){
-      click+=1;
-      console.log(click);
-      if((click<=5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
-        $("#mensaje").text("Excelente, acertaste!");
-        setTimeout(function(){ $("#imagen").attr("src", "img/peru/"+ coderP.image); }, 3000);
-        $("#nombreCoder").val("").focus();
-        puntos+=5;
-        $("#puntos").html("Puntos "+puntos+" puntos");
-      }else{
-        $("#mensaje").text("Sigue intentando");
-        puntos-=1;
-        $("#puntos").html("Puntos "+puntos+" puntos");
-      }
-    })
+  switch(sede){
+    case("Perú"):
+      alert("hola");
+      var randomPeru = Math.round(peruLength*Math.random())+1;
+      var coderP = peru[randomPeru];
+      console.log("../img/peru/"+peru[randomPeru].image);
+      $("#imagen").attr("src", "img/peru/"+ coderP.image);
+      $("#comprobar").on("click",function(){
+        click+=1;
+        console.log(click);
+        if((click<=5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+          $("#mensaje").text("Excelente, acertaste!");
+          setTimeout(function(){ $("#imagen").attr("src", "img/peru/"+ coderP.image); }, 3000);
+          $("#nombreCoder").val("").focus();
+          puntos+=5;
+          $("#puntos").html("Puntos "+puntos+" puntos");
+        }else{
+          $("#mensaje").text("Sigue intentando");
+          puntos-=1;
+          $("#puntos").html("Puntos "+puntos+" puntos");
+        }
+      })
+
+    case("México"):  
+      var randomMexico = Math.round(mexicoLength*Math.random())+1;
+      var coderM = mexico[randomMexico];
+      console.log("../img/mexico/"+mexico[randomMexico].image);
+      $("#imagen").attr("src", "img/mexico/"+ coderM.image);
+      $("#comprobar").on("click",function(){
+        click+=1;
+        console.log(click);
+        if((click<=5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+          $("#mensaje").text("Excelente, acertaste!");
+          setTimeout(function(){ $("#imagen").attr("src", "img/mexico/"+ coderM.image); }, 3000);
+          $("#nombreCoder").val("").focus();
+          puntos+=5;
+          $("#puntos").html("Puntos "+puntos+" puntos");
+        }else{
+          $("#mensaje").text("Sigue intentando");
+          puntos-=1;
+          $("#puntos").html("Puntos "+puntos+" puntos");
+        }
+      })
+
   }
-  else if ($("#sede").val("México")) {
-    $("#imagen").attr("src", "img/mexico/"+ coderM.image);
-    $("#comprobar").on("click",function(){
-      click+=1;
-      console.log(click);
-      if((click<=5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
-        $("#mensaje").text("Excelente, acertaste!");
-        setTimeout(function(){ $("#imagen").attr("src", "img/mexico/"+ coderM.image); }, 3000);
-        $("#nombreCoder").val("").focus();
-        puntos+=5;
-        $("#puntos").html("Puntos "+puntos+" puntos");
-      }else{
-        $("#mensaje").text("Sigue intentando");
-        puntos-=1;
-        $("#puntos").html("Puntos "+puntos+" puntos");
-      }
-    })
-  };
+  // if ($("#sede").val("Perú")) {
+  //   var randomPeru = Math.round(peruLength*Math.random())+1;
+  //   var coderP = peru[randomPeru];
+  //   console.log("../img/peru/"+peru[randomPeru].image);
+  //   $("#imagen").attr("src", "img/peru/"+ coderP.image);
+  //   $("#comprobar").on("click",function(){
+  //     click+=1;
+  //     console.log(click);
+  //     if((click<=5) && (coderP.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+  //       $("#mensaje").text("Excelente, acertaste!");
+  //       setTimeout(function(){ $("#imagen").attr("src", "img/peru/"+ coderP.image); }, 3000);
+  //       $("#nombreCoder").val("").focus();
+  //       puntos+=5;
+  //       $("#puntos").html("Puntos "+puntos+" puntos");
+  //     }else{
+  //       $("#mensaje").text("Sigue intentando");
+  //       puntos-=1;
+  //       $("#puntos").html("Puntos "+puntos+" puntos");
+  //     }
+  //   })
+  // }
+
+  // if ($("#sede").val("México")) {
+  //   var randomMexico = Math.round(mexicoLength*Math.random())+1;
+  //   var coderM = mexico[randomMexico];
+  //   console.log("../img/mexico/"+mexico[randomMexico].image);
+  //   $("#imagen").attr("src", "img/mexico/"+ coderM.image);
+  //   $("#comprobar").on("click",function(){
+  //     click+=1;
+  //     console.log(click);
+  //     if((click<=5) && (coderM.name.toLowerCase() == $("#nombreCoder").val().toLowerCase()) ){
+  //       $("#mensaje").text("Excelente, acertaste!");
+  //       setTimeout(function(){ $("#imagen").attr("src", "img/mexico/"+ coderM.image); }, 3000);
+  //       $("#nombreCoder").val("").focus();
+  //       puntos+=5;
+  //       $("#puntos").html("Puntos "+puntos+" puntos");
+  //     }else{
+  //       $("#mensaje").text("Sigue intentando");
+  //       puntos-=1;
+  //       $("#puntos").html("Puntos "+puntos+" puntos");
+  //     }
+  //   })
+  // };
 
 });
