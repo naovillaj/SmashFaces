@@ -20,6 +20,14 @@ select{
 	background-color: #ccc;
 }
 
+.mg-container{
+	margin: 0 20px;
+	padding-bottom: 10px;
+}
+.mg-faces{
+	margin: 0 20px;
+}
+
 .parrafo{
 	font-family: "Roboto", sans-serif;
 }
@@ -28,6 +36,10 @@ select{
 	width: 100%;
 	height: 400px;
 	position: relative;
+}
+
+#puntos{
+	color: red;
 }
 
 .divImagen{
@@ -46,7 +58,7 @@ select{
 
 
 .divAdivinar{
-	width: 60%;
+	width: 57%;
 	height: 100%;
 	display: inline-block;
 	background-color: #333333;
