@@ -46,7 +46,7 @@ select{
 
 
 .divAdivinar{
-	width: 55%;
+	width: 60%;
 	height: 100%;
 	display: inline-block;
 	background-color: #333333;
@@ -88,5 +88,5 @@ select{
 	font-size: 25px;
 	position: absolute;
 	top: 70%;
-	left: 40%;
+	left: 35%;
 }
