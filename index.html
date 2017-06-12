@@ -21,31 +21,32 @@
       </div>
       <div class="sede">
         <span>Elige tu sede:</span>
-        <select name="select">
+        <select id="sede" name="select">
           <option value=0 selected hidden="">Sede</option>
-          <option value="Perú">Lima</option>
-          <option value="México">Arequipa</option>
+          <option value="Perú">Perú</option>
+          <option value="México">México</option>
         </select>
-        <span>Puntos: </span>
+        <!-- <span>Puntos: </span> -->
+        <span id="puntos"></span>
+        <!-- <span>puntos</span> -->
       </div>
       <div class="face">
         <div class="divImagen">
-          <img src="" alt="">
+          <img id="imagen" src="" alt="picture">
         </div>
         <div class="divAdivinar">
-          <label for="nombre">Ingresa su nombre:</label>
-          <input type="text" name="nombre" value="">
-          <button type="button" class="">COMPROBAR</button>
+          <p>Ingresa su nombre:</p>
+          <input id="nombreCoder" type="text" name="nombre" value="" placeholder="Nombre">
+          <button id="comprobar" type="button" class="">COMPROBAR</button>
+          <span id="mensaje"></span>
         </div>
       </div>
     </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="js/mexico.js"></script>
+    <script src="js/peru.js"></script> -->
 	  <script src="js/app.js"></script>
-    <script src="js/components/header.js"></script>
-    <!-- <script src="js/components/parrafo.js"></script>
-    <script src="js/components/sede.js"></script>
-    <script src="js/components/sede.js"></script> -->
   </body>
 </html>
